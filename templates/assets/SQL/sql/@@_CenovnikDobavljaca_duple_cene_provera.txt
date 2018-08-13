@@ -1,0 +1,5 @@
+select count(*), c.artikal, c.komitent, c.tipcenedobavljaca
+  from cenovnikdobavljaca c
+ where c.vremeod <= localtimestamp
+   and c.vremedo >= localtimestamp
+ group by c.artikal, c.komitent, c.tipcenedobavljaca having count(*) > 1

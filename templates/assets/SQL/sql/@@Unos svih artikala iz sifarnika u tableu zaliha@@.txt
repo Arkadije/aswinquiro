@@ -1,0 +1,1 @@
+insert into zaliha select '403', a.id, '0', 0, 0, 0, to_date('31.12.2999','dd.MM.yyyy'), 'N' from artikli a;

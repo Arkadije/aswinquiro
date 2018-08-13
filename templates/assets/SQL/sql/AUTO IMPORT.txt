@@ -1,0 +1,4 @@
+Ukoliko javalja gresku u radu atuo import. Auto import nije startovan
+Proveriti da li postoji ova trackacija i ako ne postoji dodati je
+
+insert into trackakcije(sifra, naziv, trackakcijatip) values(32,'Batch obrada','O'); 

@@ -1,0 +1,12 @@
+select 
+kz.orgjed as orgjed, 
+kz.kasa as kasa, 
+max(rz.vremekreiranja) as prvi_racun, 
+min(rz.vremekreiranja) as poslednji_racun, 
+count(rz.brojracuna) as ukupno_racuna
+from kasazaglavlja kz, racunzaglavlja rz
+where kz.id=rz.kasazaglavlje
+and kz.datum > to_timestamp('31.12.2008 23:59:59','DD.MM.YYYY HH24:MI:SS')
+and kz.dnevniizvestaj is not null
+group by kz.orgjed, kz.kasa
+order by kz.orgjed, kz.kasa

@@ -1,0 +1,8 @@
+select c1.artikal, c1.vremeod, c1.tipcene
+from cenovnik c1, cenovnik c2
+where c1.skladiste = c2.skladiste
+and c1.artikal = c2.artikal
+and c1.tipcene = c2.tipcene
+and date_trunc('seconds', c1.vremeod) = date_trunc('seconds', c2.vremeod)
+and c1.vremeod <> c2.vremeod
+order by artikal; 

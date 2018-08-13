@@ -1,0 +1,3 @@
+SELECT length(komentar) from mlpzaglavlja group by komentar  having length(komentar)=1;
+
+SELECT id, length(komentar) from racunzaglavlja group by komentar, id  having length(komentar)=1;

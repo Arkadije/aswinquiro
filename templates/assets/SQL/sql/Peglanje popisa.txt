@@ -1,0 +1,72 @@
+POSTGRES
+
+
+select * from mlpzaglavlja where 
+vreme > to_timestamp ('31.12.2007 22:50:01','dd.mm.yyyy HH24:MI:SS')
+and vreme < to_timestamp ('03.01.2008 12:01:01','dd.mm.yyyy HH24:MI:SS')
+
+
+select * from mlpzaglavlja 
+/*update mlpzaglavlja 
+set datum = to_date ('31.12.2007','dd.mm.yyyy'),
+vreme = to_timestamp ('31.12.2007 23:30:01','dd.mm.yyyy HH24:MI:SS'),
+godina = 2007,
+broj=1
+*/
+where id=12331
+
+
+
+--select * from mlppopis 
+update mlppopis
+set datum = to_date ('31.12.2007','dd.mm.yyyy'),
+vreme = to_timestamp ('31.12.2007 23:30:01','dd.mm.yyyy HH24:MI:SS'),
+godina = 2007,
+broj=1
+where id=107
+
+
+
+--select * from mlpzaglavlja 
+
+update mlpzaglavlja
+set datum = to_date ('31.12.2007','dd.mm.yyyy'),
+vreme = to_timestamp ('31.12.2007 23:25:01','dd.mm.yyyy HH24:MI:SS'),
+godina = 2007,
+broj=947
+where id=12329
+
+
+
+--select * from mlpnivelacije 
+update mlpnivelacije
+set datum = to_date ('31.12.2007','dd.mm.yyyy'),
+vreme = to_timestamp ('31.12.2007 23:25:01','dd.mm.yyyy HH24:MI:SS'),
+godina = 2007,
+broj=947
+where id=11510
+
+
+
+
+select * from zz_dokumenti where dokument =131 and godina =2007
+--update zz_dokumenti  set broj=947 where dokument =131 and godina =2007
+
+
+
+ORACLE
+
+
+select * from mlpzaglavlja 
+/*update mlpzaglavlja 
+set datum = to_date ('31.12.2007','dd.mm.yyyy'),
+vreme = to_timestamp ('31.12.2007 23:30:01','dd.mm.yyyy HH24:MI:SS'),
+godina = 2007,
+broj=1
+*/
+where id=63060
+
+
+
+
+

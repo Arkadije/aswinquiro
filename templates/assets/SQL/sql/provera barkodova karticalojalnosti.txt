@@ -1,0 +1,6 @@
+select * from karticalojalnosti 
+where barkod in  
+(select barkod 
+from karticalojalnosti 
+group by barkod 
+having count(* ) > 1)

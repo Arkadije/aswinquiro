@@ -1,0 +1,7 @@
+SELECT * from raczaglavljastampa where stampano ='N';
+
+SELECT * from racstavkestampa where stampano ='N';
+
+updejtovati neodstampane stanve na D a zatim i zaglavlje.
+
+updat racstavkestampa set stampano ='D' where stampano ='N';

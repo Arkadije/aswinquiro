@@ -1,0 +1,3 @@
+select barkod, count(*) from barkodovi
+group by barkod
+having count(*) >1

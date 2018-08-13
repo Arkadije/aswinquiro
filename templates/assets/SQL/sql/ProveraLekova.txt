@@ -1,0 +1,4 @@
+select * from eel_slek es where es.id_lek in(
+select e.id_lek from eel_lek e where e.sifraleka in(
+select ea.artikalrfzo from eel_artiklirfzo ea where eel_artiklitip = 'L'))
+and es.datumk = to_date('31.12.2999','dd.mm.yyyy')

@@ -1,0 +1,9 @@
+
+
+SELECT * from eel_racunstavkerecept where (racunzaglavlje, rednibroj) in (select racunzaglavlje, rednibroj from racunstavke where artikal=39336) limit 2;
+
+- Upit kojim se dobijaju neregularni artikli na dokumentu je
+
+select * from mlpvelicine mv where mv.mlpzaglavlje = ID_ZAGLAVLJA and isArtikalRFZO(mv.artikal) <> 1 and isRfzoSkladiste(mv.skladiste) = 'D';
+
+- Nakon toga se dobije lista artikala koji ili nisu vezani za rfzo artikal ili je ta veza neaktivna. To se proverava u tabeli eel_artiklirfzo.

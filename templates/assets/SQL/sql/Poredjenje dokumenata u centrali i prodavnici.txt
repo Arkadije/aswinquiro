@@ -1,0 +1,102 @@
+Nadješ šifre dokumenata koji idu na karticu u mpo (dokumenti.karticaprodavnica=D) pa te šifre onda ubaciš u upir, možeš i ugnježdeni upit ali je ovako transparentnije...
+
+
+I Svi dokumenti (vrsta='D') su preneti "jedan-na-jedan"
+
+1. zaglavlja mlp dokumenata:
+
+- centrala:
+
+select count(*) from mlpzaglavlja where dokument in (105,106,107,108,171,172,174,175,176,177,180) and godina=2012 and orgjed=2515;
+
+4154
+
+- MPO: select count(*) from mlpzaglavlja where dokument in (105,106,107,108,171,172,174,175,176,177,180) and godina=2012 and orgjed=2515;
+
+4154
+
+2. stavke mlp dokumenata:
+
+- centrala:
+
+select count(*) from mlpstavke where mlpzaglavlje in (select id from mlpzaglavlja where dokument in (105,106,107,108,171,172,174,175,176,177,180) and godina=2012 and orgjed='2515');
+
+65591
+
+- MPO:
+
+select count(*) from mlpstavke where mlpzaglavlje in (select id from mlpzaglavlja where dokument in (105,106,107,108,171,172,174,175,176,177,180) and godina=2012 and orgjed='2515');
+
+65591
+
+3. mlpvelicine na dokumentima:
+
+- centrala:
+
+select count(*) from mlpvelicine where mlpzaglavlje in (select id from mlpzaglavlja where dokument in (105,106,107,108,171,172,174,175,176,177,180) and godina=2012 and orgjed='2515')
+
+65591
+
+- MPO:
+
+select count(*) from mlpvelicine where mlpzaglavlje in (select id from mlpzaglavlja where dokument in (105,106,107,108,171,172,174,175,176,177,180) and godina=2012 and orgjed='2515')
+
+65591
+
+II Sve nivelacije su prenete "jedan-na-jedan", nivelacije po racunima (šifra 132) se prenose zbirno kao jedno zaglavlje po smeni (u kojoj je nastao racun sa popustom). nema smisla brojati zaglavlja vec proveravamo sumu vrednosti nivelacija:
+
+- centrala
+
+select sum((staracena-novacena)*kolicina) from mlpnivstavke where mlpnivelacija in (select id from mlpnivelacije where godina=2012 and orgjed='2515')
+
+21292575.66315
+
+- MPO
+
+select sum((staracena-novacena)*kolicina) from mlpnivstavke where mlpnivelacija in (select id from mlpnivelacije where godina=2012);
+
+21292575.66315
+
+III Svi popisi su preneti "jedan-na-jedan"
+
+1. zaglavlja popisa
+
+- centrala
+
+select count(*) from mlppopis where godina='2012' and orgjed=2515
+
+2
+
+- MPO
+
+select count(*) from mlppopis where godina='2012' and orgjed=2515
+
+2
+
+2. stavke popisa
+
+- centrala
+
+select count(*) from mlppopisstavke where mlppopis in (select id from mlppopis where godina='2012' and orgjed='2515')
+
+8360
+
+- MPO
+
+select count(*) from mlppopisstavke where mlppopis in (select id from mlppopis where godina='2012' and orgjed='2515');
+
+8360
+
+3. Finansijska dimenzija popisa
+
+- centrala
+
+select sum((stara-nova)*cena) from mlppopisstavke where mlppopis in (select id from mlppopis where godina=2012 and orgjed='2515')
+
+3202210.58744
+
+- MPO
+
+select sum((stara-nova)*cena) from mlppopisstavke where mlppopis in (select id from mlppopis where godina=2012 and orgjed='2515');
+
+3202210.58744

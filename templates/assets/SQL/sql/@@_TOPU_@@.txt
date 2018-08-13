@@ -1,0 +1,37 @@
+select * from topupclient 
+where vreme > to_timestamp('05.01.2012 00:00:01','DD.MM.YYYY HH24:MI:SS') 
+and vreme < to_timestamp('05.01.2012 23:59:01','DD.MM.YYYY HH24:MI:SS')
+and akcija <> 'R' order by id desc;
+
+select * from  topupclient where vreme :: date = current_date and akcija <> 'R' order by id desc;
+
+select * from topupclient where transactionid='16500006418230';
+
+select * from  topupclient where vreme :: date = current_date and subscriber='381643212730' order by id desc;
+
+ select * from topuplog where topupclient =9075;
+ 
+ 
+ _________________________________________________________________________________________________
+
+
+update topupclient set transactionid='16500007682577', status='OK' where id =24249;
+
+update topupclient set transactionid='16500012015458', status='SPORNA' where id =117409;
+
+update topupclient set status='NOT_INIT' where id =9075;
+
+update topupclient set transactionid='0', status='NOT_INIT' where id =16659;
+
+update topupclient set status='SPORNA' where transactionid='16500012065916';
+
+update topupclient set status='STORNO' where transactionid='16500006158167';
+
+update topupclient set status='SPORNA' where id =46400;
+
+update topupclient set status='OK' where id =11583;
+
+16500004158171
+
+select * from  topupclient where vreme :: date = current_date and akcija <> 'R'  and subscriber ='381641970499' order by id desc;
+

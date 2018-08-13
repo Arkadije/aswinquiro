@@ -1,0 +1,30 @@
+Da bi se skinula restikcija priliko potvrde dokumenta funansijska korekcija (korekcija nivelacije)
+Restikcija koja proverava da li postoji neki kasnije potvrdnjene nivelacije.
+Treba da se iz procedure potvrdadokmlp1 zakomentarise sledeca linija
+
+
+Pre.
+	-- Provera. Ako se na zaglavlju ne radi kalkulacija. Da li ima artikala sa razlicitom cenom 
+	-- koja je nastala posle vremena formiranja zaglavlja. Nije bitno da li je dokument potvrdjen.
+	-- Za dokumente gde se radi kalkulacija provere su stroze i rade se pri nivelaciji.
+	if dokumentiKalkulacija = 'N' then
+	
+		perform imaDrugeCenePosle(u_mzId);
+		
+	end if;
+	
+Posle. 
+	-- Provera. Ako se na zaglavlju ne radi kalkulacija. Da li ima artikala sa razlicitom cenom 
+	-- koja je nastala posle vremena formiranja zaglavlja. Nije bitno da li je dokument potvrdjen.
+	-- Za dokumente gde se radi kalkulacija provere su stroze i rade se pri nivelaciji.
+	if dokumentiKalkulacija = 'N' then
+	
+		--perform imaDrugeCenePosle(u_mzId);
+		
+	end if;
+
+	Nakon sto smo izmenili liniju pustiti proceduru 
+		psql backoffice < potvrdadokmlp1.pgs
+	
+Nakon ove akciej potvrditi dokument a zatim otkomentarisati gore navedenu liniju i pustiti ponovo proceduru.
+		psql backoffice < potvrdadokmlp1.pgs

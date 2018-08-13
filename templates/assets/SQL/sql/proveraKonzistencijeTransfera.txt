@@ -1,0 +1,72 @@
+JANUAR
+
+25503443.05
+25434783.04
+
+   68660.01
+
+
+PREPTPOSTAVKA JE DA JE USPEO TRANSFER ZA PERIOD U UPITU
+
+POSTGRES
+
+select v.skladiste, sum(v.duguje - v.potrazuje), count(*) 
+from mlpzaglavlja z, mlpvelicine v, dokumenti d
+where z.id = v.mlpzaglavlje
+and z.dokument = d.sifra
+and d.kartica = 'D'
+--and dokumentiPkg.getSvojstvo(d.sifra, 'centralniDokument') = 'N'
+and v.skladiste = '03006R'
+and z.datum <= (localtimestamp::date - 2)
+and z.potvrdjen = 'D'
+--and z.datum > to_date('31.12.2008','DD.MM.YYYY')
+group by v.skladiste
+;
+
+
+
+select rs.skladiste, sum(rz.iznos), count(*) 
+from kasazaglavlja kz, racunzaglavlja rz, racunstavke rs, dokumenti d
+where rz.id = rs.racunzaglavlje
+and kz.id = rz.kasazaglavlje
+and rz.dokument = d.sifra
+and d.kartica = 'D'
+and rs.skladiste = '03006R'
+and kz.datum <= (localtimestamp::date - 2)
+and rz.potvrdjen = 'D'
+--and kz.datum > to_date('31.12.2008','DD.MM.YYYY')
+group by rs.skladiste
+;
+
+
+
+
+ORACLE
+
+select v.skladiste, sum(duguje - potrazuje), count(*) 
+from mlpzaglavlja z, mlpvelicine v, dokumenti d
+where z.id = v.mlpzaglavlje
+and z.dokument = d.sifra
+--sledeci uslov nije bitan za WEG ali je bitan za DELO, LILLY, SWISSLION
+--and dokumentiPkg.getSvojstvo(d.sifra, 'karticaProdavnica') = 'D'
+and dokumentiPkg.getSvojstvo(d.sifra, 'centralniDokument') = 'N'
+and v.skladiste = '03006R'
+and z.datum <= trunc(sysdate) - 2
+--and z.datum > to_date('31.12.2008','DD.MM.YYYY')
+group by v.skladiste
+;
+
+
+
+select rs.skladiste,sum(rz.iznos), count(*) 
+from kasazaglavlja kz, racunzaglavlja rz, racunstavke rs, dokumenti d
+where rz.id = rs.racunzaglavlje
+and kz.id = rz.kasazaglavlje
+and rz.dokument = d.sifra
+and d.kartica = 'D'
+and rs.skladiste = '03006R'
+and kz.datum <=  trunc(sysdate) - 2
+--and rz.potvrdjen = 'D'
+--and kz.datum > to_date('31.12.2008','DD.MM.YYYY')
+group by rs.skladiste
+;

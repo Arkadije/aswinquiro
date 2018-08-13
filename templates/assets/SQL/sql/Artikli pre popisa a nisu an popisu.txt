@@ -1,0 +1,13 @@
+select mv.artikal, a.sifra 
+from mlpvelicine mv, mlpzaglavlja mz , artikli a
+where mv.artikal not in (select mp.artikal from mlppopisstavke mp where mp.mlppopis =536)
+and mv.mlpzaglavlje=mz.id
+and a.id=mv.artikal
+and mz.vreme < to_timestamp('02.01.2009 18:09:18','DD.MM.YYYY HH24:MI:SS')
+and mz.orgjed= '0014'
+and mlpZalihaVremeVel(
+	mz.orgjed,
+	mv.artikal,
+	mv.velicina,
+	to_timestamp('02.01.2009 00:09:18','DD.MM.YYYY HH24:MI:SS')::timestamp
+)<>0

@@ -1,0 +1,5 @@
+select * from racunzaglavlja where 
+id not in (select racunzaglavlje from raczaglavljastampa) 
+and iznos > 0
+and vreme::date >= to_date('01.01.2009','dd.mm.yyyy') 
+and vreme::date <= to_date('31.01.2009','dd.mm.yyyy');

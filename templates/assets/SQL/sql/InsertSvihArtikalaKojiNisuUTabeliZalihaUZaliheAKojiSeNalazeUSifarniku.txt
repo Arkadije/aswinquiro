@@ -1,0 +1,5 @@
+insert into zaliha
+select 'SIFRA_ORGJEDA', a.id, '0', 0, 0, '0', to_date('31.12.2999','dd.mm.yyyy'), 'N'
+from artikli a
+where a.id not in (select artikal from zaliha)
+and a.tip = 'R';

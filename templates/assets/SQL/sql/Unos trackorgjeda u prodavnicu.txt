@@ -1,0 +1,16 @@
+select * from trackorgjed
+--insert into trackorgjed (orgjed, trackakcija, vreme) values ('NP01',13,to_timestamp('01.01.2006 00:00:00','dd.mm.yyyy hh24:mi:ss'))
+
+Ukoliko postoje vise orgjeda salje se:
+Dokumenti - 13 - Nadredjeni (0225)
+Sifarnici - 10 - Podredjeni (02250)
+Cenovnik  - 12 - Podredjeni (02250)
+
+
+Unos Prodajnog objekta
+
+--select * from prodajniobjekat
+--insert into prodajniobjekat values ('koz1410','R.K. KOZMO-NORK','x','192.168.74.44','dbserver1410.mpc.com','N','N',2,'koz1410')
+
+
+korisnicirabattipo - polje za prava na popust

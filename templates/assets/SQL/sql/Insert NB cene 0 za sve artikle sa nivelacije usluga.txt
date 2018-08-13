@@ -1,0 +1,13 @@
+insert into cenovnik (skladiste, artikal, tipcene, vremeod, vremedo, cena, transferovan)
+values ('ORGJED',ID ARTIKLA, 'NB', to_timestamp('01.01.2013 01:00:00','DD.MM.YYYY HH24:MI:SS')::timestamp, to_timestamp('31.12.2999 10:00:00','DD.MM.YYYY HH24:MI:SS')::timestamp, SENA, 'N'); 
+
+insert into cenovnik (skladiste, artikal, tipcene, vremeod, vremedo, cena )
+select '04140',artikal, 'NB', to_timestamp('01.01.2008 01:00:00','DD.MM.YYYY HH24:MI:SS')::timestamp, to_timestamp('31.12.2999 10:00:00','DD.MM.YYYY HH24:MI:SS')::timestamp, 0
+from mlpnivstavke where mlpnivelacija=10370; 
+
+
+--select artikal
+--from mlpnivstavke where mlpnivelacija=10370; 
+
+
+select *  from  cenovnik where tipcene='NB' and artikal in (select artikal from mlpnivstavke where mlpnivelacija=10370 )

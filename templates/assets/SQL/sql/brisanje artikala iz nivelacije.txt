@@ -1,0 +1,17 @@
+SELECT ms.artikal, ao.aktivan 
+from mlpnivstavke ms, artikliosobine ao
+where ms.artikal = ao.artikal
+and ms.mlpnivelacija =13702
+and ao.aktivan='N'
+
+
+
+delete from mlpnivstavke 
+where mlpnivelacija =13702
+and	artikal in (
+		SELECT ms.artikal
+		from mlpnivstavke ms, artikliosobine ao
+		where ms.artikal = ao.artikal
+		and ms.mlpnivelacija =13702
+		and ao.aktivan='N'
+		)

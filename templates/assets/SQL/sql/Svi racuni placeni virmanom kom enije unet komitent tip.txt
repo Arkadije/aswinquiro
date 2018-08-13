@@ -1,0 +1,6 @@
+select rz.id, rz.komitenttip,rz.komitent, rz.vreme, rp.* 
+from racunplacanje rp, racunzaglavlja rz
+where rp.vrstaplacanja ='04'
+and rz.id=rp.racunzaglavlje
+and rz.komitenttip isnull
+order by rz.vreme desc

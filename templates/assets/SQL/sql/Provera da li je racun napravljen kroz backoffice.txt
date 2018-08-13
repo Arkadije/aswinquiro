@@ -1,0 +1,16 @@
+select *  from racunzaglavlja where id not in 
+(select racunzaglavlje from raczaglavljastampa where stampano='D')
+and iznos >0
+order by vreme desc
+
+
+
+
+select * from racunzaglavlja where 
+id not in (select racunzaglavlje from raczaglavljastampa) 
+and vreme::date >= to_date('04.02.2008','dd.mm.yyyy') 
+and vreme::date <= to_date('04.02.2008','dd.mm.yyyy')
+
+
+
+select * from raczaglavljastampa where racunzaglavlje in (3435,3433,3434);

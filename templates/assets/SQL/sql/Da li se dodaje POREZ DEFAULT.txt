@@ -1,0 +1,7 @@
+select * from dokumenti 
+where kartica='D'
+and komitent='D'
+and aplikacija='mlp'
+and kalkulacija in ('D','A')
+and vrsta='D'
+and sifra < 300

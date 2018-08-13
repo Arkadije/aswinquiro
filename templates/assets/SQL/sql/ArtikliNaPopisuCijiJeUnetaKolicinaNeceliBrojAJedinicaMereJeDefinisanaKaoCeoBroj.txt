@@ -1,0 +1,8 @@
+ SELECT mps.artikal
+ FROM mlppopisstavke mps,  artikli a, artikliosobine ao, jedinicemera jm 
+ WHERE mps.artikal = a.id 
+ AND a.id = ao.artikal 
+ AND ao.maloprodajnajm = jm.sifra 
+ AND mps.mlppopis=99
+ and ao.maloprodajnajm='KOM'
+ and  mps.nova != FLOOR(mps.nova);

@@ -1,0 +1,7 @@
+Naci dokument koji je potvrdjen a cija kalkulacija nije potvrdjena iz bilo kog razloga. Naci ide tog dokumenta. Ukoliko je datum razliciti staviti drugi
+datum, a ukolio je isti datum samo izmeniti vreme potvrdjenog dokumenta na tekuce i odmah potvrditi kalkulaciju.
+
+
+
+--select id, vreme ,datum, vremepotvrde from mlpzaglavlja where id = 13636;
+update mlpzaglavlja set vreme = localtimestamp where id = 13636;

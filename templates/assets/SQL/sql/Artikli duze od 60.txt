@@ -1,0 +1,8 @@
+Ukoliko je naziv artikla veci od 60 karatkera treba odraditi sledeci upit kako 
+bi se skratio naziv i kako bi racuni mogu da se potvrdjuju.
+
+update artikli set naziv=substr(naziv,1,60) where length(naziv) > 60;
+
+
+
+select count(*) from artikli where length(naziv) > 60;

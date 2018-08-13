@@ -1,0 +1,4 @@
+select artikal, count(*), vremedo from cenovnik group by artikal, vremedo having count(*)>2;
+
+insert into cenovnik (skladiste, artikal, tipcene, vremeod, vremedo, cena )
+values ('NS145A',346013, 'NB', to_timestamp('30.01.2012 17:14:52','DD.MM.YYYY HH24:MI:SS')::timestamp, to_timestamp('31.12.2999 10:00:00','DD.MM.YYYY HH24:MI:SS')::timestamp,  125.9259); 

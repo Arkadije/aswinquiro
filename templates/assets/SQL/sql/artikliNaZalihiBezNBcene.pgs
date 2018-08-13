@@ -1,0 +1,5 @@
+select  distinct (a.sifra)
+from zaliha z, artikli a
+where z.artikal=a.id
+and cenaArtikla(	z.skladiste,	z.artikal,	'NB',	localtimestamp	) is null
+and z.kolicina <>0
