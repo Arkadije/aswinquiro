@@ -1,3 +1,15 @@
 .asw {
     color: #dc3545;
 }
+
+.typeahead {
+    width: 285px;
+}
+
+li.active {
+    background-color: #d6d8db;
+}
+
+.dropdown-item:hover {
+    background-color: #d6d8db;
+}

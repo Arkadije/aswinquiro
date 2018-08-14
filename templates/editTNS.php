@@ -55,12 +55,12 @@
 						</div>
 					</form>
 				<?php endforeach; ?>
-				<div class="row">
-					<div class="col">
-						<a href="<?php echo URLROOT; ?>/company.php"	class="btn btn-outline-secondary btn-block">Nazad</a>
-					</div>
-				</div>
 			<?php endif; ?>
+			<div class="row">
+				<div class="col">
+					<a href="<?php echo URLROOT; ?>/company.php"	class="btn btn-outline-secondary btn-block">Nazad</a>
+				</div>
+			</div>
 		</div>
 	</div>
 	<div class="col-md-3">

@@ -6,7 +6,7 @@
 			<a class="navbar-brand ml-2" href="<?php echo URLROOT; ?>"><strong><spam class="asw">A</spam>SW<spam class="asw">:</spam></strong> INQUIRO</a>
 			<!-- Navbar Search -->
 			<form action="<?php echo URLROOT; ?>/company.php" method="post" class="d-none d-md-inline-block form-inline ml-2  mr-0 mr-md-3 my-2 my-md-0">
-				<div class="input-group">
+				<div tabindex="0" class="input-group" id="search">
 					<input type="text" id="companyInput" class="form-control" placeholder="Pretraga Kompanije" name="searchCompany" autocomplete="off" aria-label="Search" aria-describedby="basic-addon2">
 					<div class="input-group-append">
 						<button class="btn btn-muted" type="submit" id="name-submit" name="companySerach">

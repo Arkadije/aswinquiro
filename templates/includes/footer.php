@@ -12,13 +12,10 @@
     </a>
 
     <!-- Bootstrap core JavaScript-->
-		<!-- <script src="<?php echo URLROOT; ?>/templates/assets/vendor/jquery/jquery.min.js"></script>
-		<script src="<?php echo URLROOT; ?>/templates/assets/vendor/jquery/jquery-ui.js"></script> -->
+		<script src="<?php echo URLROOT; ?>/templates/assets/vendor/jquery/jquery.min.js"></script>
+		<script src="<?php echo URLROOT; ?>/templates/assets/vendor/jquery/jquery-ui.js"></script>
+		<script src="<?php echo URLROOT; ?>/templates/assets/js/bootstrap3-typeahead.min.js"></script>
 
-		<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-		<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-3-typeahead/4.0.2/bootstrap3-typeahead.min.js"></script>
 
     <!-- Core plugin JavaScript-->
 		<script src="<?php echo URLROOT; ?>/templates/assets/vendor/jquery-easing/jquery.easing.min.js"></script>
