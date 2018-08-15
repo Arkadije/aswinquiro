@@ -6,11 +6,11 @@ var compId = "<?php echo $data['companyId']; ?>";
 	<div class="row">
 		<div class="col-md-9">
 			<div class="row">
-				<div class="col-md-10">
+				<div class="col-sm-8">
 					<h3 class="text-uppercase"><?php echo $_SESSION['company_name']; ?></h3>
 
 				</div>
-				<div class="col-md-2">
+				<div class="col-sm-4">
 					<a href="<?php echo URLROOT; ?>/editCompany.php" class="btn btn-outline-secondary float-right ">
 						<i class="fas fa-pencil-alt"></i>
 					</a>
@@ -21,10 +21,10 @@ var compId = "<?php echo $data['companyId']; ?>";
 			</div>
 			<hr>
 			<div class="row mb-2">
-				<div class="col-md-10">
+				<div class="col-sm-8">
 					<h4>Transfer / ERP</h4>
 				</div>
-				<div class="col-md-2">
+				<div class="col-sm-4">
 					<a href="<?php echo URLROOT; ?>/editTransfer.php" class="btn btn-outline-secondary float-right ">
 						<i class="fas fa-pencil-alt"></i>
 					</a>
@@ -59,10 +59,10 @@ var compId = "<?php echo $data['companyId']; ?>";
 			</div>
 			<hr>
 			<div class="row mb-2">
-				<div class="col-md-10">
+				<div class="col-sm-8">
 					<h4>Pristupne informacije</h4>
 				</div>
-				<div class="col-md-2">
+				<div class="col-sm-4">
 					<a href="<?php echo URLROOT; ?>/editUserData.php" class="btn btn-outline-secondary float-right ">
 						<i class="fas fa-pencil-alt"></i>
 					</a>
@@ -193,10 +193,10 @@ var compId = "<?php echo $data['companyId']; ?>";
 			</div>
 			<hr>
 			<div class="row mb-2">
-				<div class="col-md-10">
+				<div class="col-sm-8">
 					<h4>TNS Names</h4>
 				</div>
-				<div class="col-md-2">
+				<div class="col-sm-4">
 					<a href="<?php echo URLROOT; ?>/editTNS.php" class="btn btn-outline-secondary float-right ">
 						<i class="fas fa-pencil-alt"></i>
 					</a>
@@ -246,11 +246,11 @@ var compId = "<?php echo $data['companyId']; ?>";
 				<?php displayMessage(); ?>
 			</div>
 			<hr>
-			<div class="row mt-2">
-				<div class="col-md-8">
-					<h5 class="text-aligh-left text-muted ">Dodatne informacije</h5>
+			<div class="row mt-2 justify-content-between">
+				<div class="col-sm-5">
+					<h5 class="text-aligh-left text-muted ">Dodatno</h5>
 				</div>
-				<div class="col-md-4">
+				<div class="col-sm-7">
 					<a href="<?php echo URLROOT; ?>/editAdditionalData.php" class="btn btn-outline-secondary float-right ">
 						<i class="fas fa-pencil-alt"></i>
 					</a>
