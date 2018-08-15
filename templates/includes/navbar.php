@@ -1,9 +1,9 @@
 <?php if ((isset($_SESSION['user_id'])) && (($_SESSION['user_type']) != 'adm')) : ?>
 		<nav class="navbar navbar-expand navbar-dark bg-dark static-top">
-			<button class="btn btn-link btn-sm text-white order-1 order-sm-0 " id="sidebarToggle" href="#">
+			<button class="btn btn-link btn-sm text-white order-1 order-sm-0 mr-1" id="sidebarToggle" href="#">
 				<i class="fas fa-bars fa-lg" style="color: #dc3545;"></i>
 			</button>
-			<a class="navbar-brand ml-2" href="<?php echo URLROOT; ?>"><strong><spam class="asw">A</spam>SW<spam class="asw">:</spam></strong> INQUIRO</a>
+			<a class="navbar-brand ml-2" href="<?php echo URLROOT; ?>"><strong><spam class="asw">A</spam>SW<spam class="asw">:</spam></strong> <span class="ml-1">INQUIRO</span></a>
 			<!-- Navbar Search -->
 			<form action="<?php echo URLROOT; ?>/company.php" method="post" class="d-none d-md-inline-block form-inline ml-2  mr-0 mr-md-3 my-2 my-md-0">
 				<div tabindex="0" class="input-group" id="search">
@@ -51,10 +51,10 @@
 		</nav>
 	<?php elseif ((isset($_SESSION['user_id'])) && (($_SESSION['user_type']) == 'adm')) : ?>
 		<nav class="navbar navbar-expand navbar-dark bg-dark static-top">
-			<button class="btn btn-link btn-sm text-white order-1 order-sm-0 " id="sidebarToggle" href="#">
+			<button class="btn btn-link btn-sm text-white order-1 order-sm-0 mr-1" id="sidebarToggle" href="#">
 				<i class="fas fa-bars fa-lg" style="color: #dc3545;"></i>
 			</button>
-			<a class="navbar-brand ml-2" href="<?php echo URLROOT; ?>"><strong><spam class="asw">A</spam>SW<spam class="asw">:</spam></strong> INQUIRO</a>
+			<a class="navbar-brand ml-2" href="<?php echo URLROOT; ?>"><strong><spam class="asw">A</spam>SW<spam class="asw">:</spam></strong> <span class="ml-1">INQUIRO</span></a>
 			<!-- Navbar Search -->
 			<form action="<?php echo URLROOT; ?>/company.php" method="post" class="d-none d-md-inline-block form-inline ml-2  mr-0 mr-md-3 my-2 my-md-0">
 				<div class="input-group">
@@ -104,10 +104,10 @@
 		</nav>
 	<?php else : ?>
 		<nav class="navbar navbar-expand navbar-dark bg-dark static-top">
-			<button class="btn btn-link btn-sm text-white order-1 order-sm-0 " id="sidebarToggle" href="#">
+			<button class="btn btn-link btn-sm text-white order-1 order-sm-0 mr-1" id="sidebarToggle" href="#">
 				<i class="fas fa-bars fa-lg" style="color: #dc3545;"></i>
 			</button>
-			<a class="navbar-brand ml-2" href="<?php echo URLROOT; ?>"><strong><spam class="asw">A</spam>SW<spam class="asw">:</spam></strong> INQUIRO</a>
+			<a class="navbar-brand ml-2" href="<?php echo URLROOT; ?>"><strong><spam class="asw">A</spam>SW<spam class="asw">:</spam></strong> <span class="ml-1">INQUIRO</span></a>
 
 			<!-- Navbar -->
 			<ul class="navbar-nav float-right ml-auto">
