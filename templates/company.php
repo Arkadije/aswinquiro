@@ -246,7 +246,7 @@ var compId = "<?php echo $data['companyId']; ?>";
 				<?php displayMessage(); ?>
 			</div>
 			<hr>
-			<div class="row mt-2">
+			<div class="row mt-2 justify-content-between">
 				<div class="col-sm-5">
 					<h5 class="text-aligh-left text-muted ">Dodatno</h5>
 				</div>
